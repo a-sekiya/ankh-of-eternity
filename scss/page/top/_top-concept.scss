@@ -1,0 +1,155 @@
+@use "../../global" as g;
+
+/*!
+page > top > concept
+------------------------------
+*/
+.top-concept {
+  @include g.mq() {
+    width: 86.7%;
+  }
+
+  @include g.mq(lg) {
+    width: 91.7%;
+  }
+}
+
+.top-concept-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 380px 1fr;
+
+  @include g.mq(lg) {
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: 800px;
+  }
+}
+
+.top-concept-img {
+  position: relative;
+  overflow: hidden;
+
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @include g.mq(lg) {
+    order: 2;
+  }
+}
+
+.top-concept-img-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 0 20px 40px 20px;
+  color: var(--website-3-text-white);
+  font-family: var(--font-family-en);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  @include g.mq() {
+    padding: 0 48px 40px 48px;
+  }
+
+  @include g.mq(lg) {
+    left: 50%;
+    translate: -48% 0;
+    padding: 0 0 104px 0;
+    font-size: 14px;
+    line-height: 2.5;
+    width: 72.7%;
+  }
+}
+
+.top-concept-content {
+  background-color: var(--website-3-bg-red);
+  position: relative;
+  color: var(--website-3-text-white);
+}
+
+.top-concept-content-inner {
+  padding: 56px 20px;
+
+  @include g.mq() {
+    padding: 56px 48px;
+  }
+
+  @include g.mq(lg) {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    translate: -52% 0;
+    padding: 0 0 112px 0;
+    font-size: 14px;
+    line-height: 2.5;
+    width: 72.7%;
+  }
+}
+
+.top-concept-title {
+  display: block;
+  color: var(--website-3-text-primary-bg-dark);
+  font-family: var(--font-family-en);
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 1.1;
+  letter-spacing: 0.05em;
+
+  @include g.mq(lg) {
+    font-size: 89px;
+  }
+
+  @include g.mq(xxl) {
+    font-size: 108px;
+  }
+}
+
+.top-concept-title-unit {
+  display: block;
+
+  @include g.mq() {
+    display: inline-block;
+  }
+}
+
+.top-concept-title-unit02 {
+  display: block;
+}
+
+.top-concept-text-group {
+  margin-top: 32px;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 2;
+  letter-spacing: 0.1em;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @include g.mq(lg) {
+    margin-top: 82px;
+    line-height: 2.5;
+    gap: 16px;
+  }
+
+  @include g.mq(xxl) {
+    font-size: 16px;
+  }
+}
+
+.top-concept-text-unit {
+  display: block;
+}
+
+.top-concept-text02-unit {
+  @include g.mq() {
+    display: block;
+  }
+}
