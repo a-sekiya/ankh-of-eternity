@@ -485,6 +485,7 @@ layout > footer
   width: 100vw;
   height: 100vh;
   background-color: var(--for-components-bg-black);
+  border: none;
   opacity: 0.9;
 }
 
@@ -525,6 +526,12 @@ layout > footer
   display: inline-flex;
   flex-direction: column;
   gap: 4px;
+  transition: all 0.3s;
+}
+@media (any-hover: hover) {
+  .l-header-menu-link:hover {
+    color: var(--text-primary-bg-dark);
+  }
 }
 
 .l-header-menu-text-en {
