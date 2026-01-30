@@ -1,0 +1,205 @@
+@use "../../global" as g;
+
+/*!
+page > top > top-brands
+------------------------------
+*/
+.top-brands {
+  position: relative;
+  overflow: hidden;
+  padding-block: 104px 120px;
+  z-index: 1;
+
+  @include g.mq() {
+    padding-block: 176px 253px;
+  }
+
+  &::before {
+    content: "Ankh of Eternity Ankh of Eternity Ankh of Eternity Ankh of Eternity Ankh of Eternity Ankh of Eternity";
+    color: var(--text-primary);
+    opacity: 0.05;
+    font-family: var(--font-family-en);
+    font-size: 154px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: -1;
+    pointer-events: none;
+    display: inline-block;
+    animation: marquee-brands 40s linear infinite;
+
+    @include g.mq() {
+      font-size: 240px;
+    }
+  }
+}
+
+@keyframes marquee-brands {
+  0% {
+    transform: translate(-50%, 0);
+  }
+  100% {
+    transform: translate(-75%, 0);
+  }
+}
+
+.top-brands-inner {
+  padding-inline: 20px;
+  position: relative;
+  z-index: var(--z-index-default);
+
+  @include g.mq() {
+    width: 91.7%;
+    padding-inline: 120px;
+  }
+}
+
+.top-brands-title {
+  text-align: center;
+}
+
+.top-brands-title-en {
+  color: var(--text-primary);
+  font-family: var(--font-family-en);
+  font-weight: 400;
+  font-size: 56px;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+}
+
+.top-brands-title-ja {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 2.5;
+  letter-spacing: 0.1em;
+  margin-top: 8px;
+}
+
+.top-brands-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  margin-top: 56px;
+
+  @include g.mq(xl) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 80px;
+    margin-top: 80px;
+  }
+}
+
+.top-brands-item {
+  position: relative;
+
+  &:nth-child(even) {
+    margin-left: 40px;
+
+    @include g.mq(xl) {
+      margin-top: 88px;
+      margin-left: 0;
+    }
+  }
+
+  &:nth-child(odd) {
+    margin-right: 40px;
+
+    @include g.mq(xl) {
+      margin-bottom: 192px;
+      margin-right: 0;
+
+      &:nth-last-child(-n + 2) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.top-brands-item-link {
+  @media (any-hover: hover) {
+    &:hover {
+      .top-brands-item-img {
+        scale: 1.03;
+      }
+
+      .top-brands-item-button {
+        transform: translateX(4px);
+      }
+    }
+  }
+}
+
+.top-brands-item-img {
+  position: relative;
+  overflow: hidden;
+  z-index: var(--z-index-default);
+  transition: scale 0.3s;
+
+  &::before {
+    content: attr(data-number);
+    position: absolute;
+    bottom: 0;
+    right: 9px;
+    font-family: var(--font-family-en);
+    color: var(--text-white);
+    opacity: 0.5;
+    font-weight: 400;
+    font-size: 96px;
+    line-height: 0.25;
+
+    @include g.mq() {
+      right: 0;
+      font-size: 152px;
+    }
+  }
+}
+
+.top-brands-item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+
+  @include g.mq() {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 16px;
+  }
+}
+
+.top-brands-item-title-en {
+  font-family: var(--font-family-en);
+  color: var(--text-primary);
+  font-size: 24px;
+  letter-spacing: 0.05em;
+
+  @include g.mq() {
+    font-size: 28px;
+  }
+}
+
+.top-brands-item-title-ja {
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+
+  @include g.mq() {
+    font-size: 16px;
+  }
+}
+
+.top-brands-item-button {
+  align-self: flex-end;
+  width: 40px;
+  height: 40px;
+  transition: 0.3s ease;
+
+  @include g.mq() {
+    width: 72px;
+    height: 72px;
+  }
+}

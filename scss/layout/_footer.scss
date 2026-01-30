@@ -4,5 +4,163 @@
 layout > footer
 ------------------------------
 */
-.footer {
+
+.l-footer {
+  @include g.mq() {
+    width: 86.7%;
+  }
+
+  @include g.mq(xl) {
+    width: 91.7%;
+    padding: 0 20px;
+  }
+}
+
+.l-footer-inner {
+  background-color: var(--bg-darkblue);
+  color: var(--text-white);
+  padding: 84px 20px 88px 20px;
+
+  @include g.mq(sm) {
+    padding: 64px 50px 88px 50px;
+  }
+
+  @include g.mq() {
+    padding: 80px 40px 80px 40px;
+  }
+
+  @include g.mq(lg) {
+    padding: 80px 80px 45px 80px;
+  }
+}
+
+.l-footer-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 56px;
+
+  @include g.mq() {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+.l-footer-logo {
+  @include g.mq() {
+    transform: translate(8px, -9px);
+  }
+}
+
+.l-footer-info {
+  margin-top: 21px;
+
+  @include g.mq() {
+    margin-top: 0;
+    text-align: right;
+  }
+}
+
+.l-footer-info-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+}
+
+.l-footer-icons {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  @include g.mq() {
+    justify-content: flex-end;
+  }
+}
+
+.l-footer-icon-link {
+  transition: opacity 0.3s;
+
+  @media (any-hover: hover) {
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}
+
+.l-footer-main {
+  display: flex;
+  flex-direction: column;
+  gap: 31px;
+
+  @include g.mq() {
+    flex-direction: row;
+    gap: 42px;
+  }
+}
+
+.l-footer-nav {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px 12px;
+  margin-top: 40px;
+
+  @include g.mq(sm) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include g.mq() {
+    gap: 38px;
+  }
+}
+
+.l-footer-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.l-footer-nav-link {
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  transition: all 0.3s;
+
+  @media (any-hover: hover) {
+    &:hover {
+      color: var(--text-primary-bg-dark);
+    }
+  }
+}
+
+.l-footer-access-map {
+  margin-top: 40px;
+
+  iframe {
+    width: 100%;
+    height: 148px;
+
+    @include g.mq() {
+      height: 180px;
+    }
+
+    @include g.mq(xl) {
+      width: 413px;
+    }
+  }
+}
+
+.l-footer-copyright {
+  margin-block: 24px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  opacity: 0.31;
 }

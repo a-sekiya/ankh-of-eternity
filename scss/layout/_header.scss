@@ -1,8 +1,143 @@
 @use "../global" as g;
 
 /*!
-layout > header
+layout > footer
 ------------------------------
 */
-.header {
+.l-header {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: var(--z-index-header);
+}
+
+.l-header-logo {
+  margin-top: 8px;
+  width: 85px;
+  position: relative;
+  display: block;
+  z-index: var(--z-index-modal);
+
+  @include g.mq() {
+    width: 132px;
+    margin-top: 14px;
+  }
+}
+
+.l-header-logo-link {
+  display: block;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--for-components-bg-black);
+    opacity: 0.4;
+    border-radius: 50%;
+    z-index: -1;
+    display: block;
+    width: 200px;
+    height: 200px;
+    pointer-events: none;
+
+    @include g.mq() {
+      top: -50%;
+      width: 391px;
+      height: 391px;
+    }
+  }
+}
+
+.l-header-menu-open-button,
+.l-header-menu-close-button {
+  position: absolute;
+  right: 20px;
+  top: 38px;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  transform: translate(10px, -14px);
+
+  @include g.mq() {
+    right: 45px;
+    top: 40px;
+    transform: translate(15px, -10px);
+  }
+
+  img {
+    width: 40px;
+    height: 12px;
+
+    @include g.mq() {
+      width: 32px;
+    }
+  }
+}
+
+.l-header-menu {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--for-components-bg-black);
+  opacity: 0.9;
+}
+
+.l-header-menu-top {
+  display: grid;
+  place-items: center;
+}
+
+.l-header-menu-nav {
+  margin-top: 150px;
+
+  @include g.mq() {
+    margin-top: 122px;
+  }
+}
+
+.l-header-menu-list {
+  padding-bottom: 30px;
+  padding-inline: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+
+  @include g.mq() {
+    padding-inline: 100px;
+  }
+
+  @include g.mq(lg) {
+    padding-inline: 320px;
+  }
+}
+
+.l-header-menu-link {
+  color: var(--text-white);
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.l-header-menu-text-en {
+  font-family: var(--font-family-en);
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+}
+
+.l-header-menu-text-ja {
+  opacity: 0.59;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0.1em;
 }

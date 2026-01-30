@@ -1,0 +1,141 @@
+@use "../../global" as g;
+
+/*!
+page > top > top-others
+------------------------------
+*/
+.top-others {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "Ankh of Eternity Ankh of Eternity Ankh of Eternity Ankh of Eternity Ankh of Eternity Ankh of Eternity";
+    color: var(--text-primary);
+    opacity: 0.05;
+    font-family: var(--font-family-en);
+    font-size: 154px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-25%);
+    display: inline-block;
+    animation: marquee-others 40s linear infinite;
+
+    @include g.mq() {
+      font-size: 240px;
+      transform: translateY(-60%);
+    }
+  }
+}
+
+@keyframes marquee-others {
+  0% {
+    transform: translateY(-25%) translateX(0);
+  }
+  100% {
+    transform: translateY(-25%) translateX(-50%);
+  }
+}
+
+@include g.mq() {
+  @keyframes marquee-others {
+    0% {
+      transform: translateY(-60%) translateX(0);
+    }
+    100% {
+      transform: translateY(-60%) translateX(-50%);
+    }
+  }
+}
+
+.top-others-inner {
+  padding: 80px 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 38px;
+
+  @include g.mq() {
+    width: 86.7%;
+    padding: 80px 60px;
+  }
+
+  @include g.mq(ml) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 49px;
+  }
+
+  @include g.mq(lg) {
+    width: 91.7%;
+  }
+}
+
+.top-others-card {
+  position: relative;
+
+  @media (any-hover: hover) {
+    &:hover {
+      .top-others-image {
+        transform: scale(1.03);
+      }
+
+      .top-others-button {
+        transform: translateX(4px);
+      }
+    }
+  }
+}
+
+.top-others-image {
+  transition: transform 0.3s ease;
+
+  img {
+    aspect-ratio: 340 / 235;
+    object-fit: cover;
+
+    @include g.mq(lg) {
+      aspect-ratio: 576 / 336;
+    }
+  }
+}
+
+.top-others-content {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  translate: -50% 50%;
+  width: 86%;
+  color: var(--text-white);
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(2, auto);
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px 34px;
+
+  @include g.mq(lg) {
+    gap: 32px;
+  }
+}
+
+.top-others-text {
+  letter-spacing: 0.1em;
+  grid-row: 2/3;
+}
+
+.top-others-button {
+  width: 40px;
+  height: 40px;
+  grid-column: 2/3;
+  grid-row: 2/3;
+  transition: 0.3s ease;
+
+  @include g.mq(lg) {
+    width: 64px;
+    height: 64px;
+    grid-row: 1/3;
+  }
+}

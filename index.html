@@ -1,36 +1,420 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <title>コーディングテンプレート</title>
-        <meta name="description" content="ページの説明" />
-        <meta name="format-detection" content="telephone=no" />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Ankh of Eternity | 絢爛なる織りの極致、ペルシャ絨毯</title>
+    <meta name="description" content="ページの説明" />
+    <meta name="format-detection" content="telephone=no" />
 
-        <!-- favicon/webclipicon -->
-        <link rel="icon" href="img/favicon.ico" />
-        <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="img/webclip.png" />
+    <!-- favicon/webclipicon -->
+    <link rel="icon" href="img/favicon.ico" />
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="img/webclip.png" />
 
-        <!-- ogp -->
-        <meta property="og:site_name" content="サイト名" />
-        <meta property="og:url" content="URL" />
-        <meta property="og:type" content="website or article" />
-        <meta property="og:title" content="ページのタイトル" />
-        <meta property="og:description" content="ページの説明" />
-        <meta property="og:image" content="URL" />
-        <meta property="og:locale" content="ja_JP" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:description" content="ページの説明" />
-        <meta name="twitter:image:src" content="URL" />
+    <!-- ogp -->
+    <meta property="og:site_name" content="Ankh of Eternity" />
+    <meta property="og:url" content="URL" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Ankh of Eternity | 絢爛なる織りの極致、ペルシャ絨毯" />
+    <meta property="og:description" content="ページの説明" />
+    <meta property="og:image" content="URL" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:description" content="ページの説明" />
+    <meta name="twitter:image:src" content="URL" />
 
-        <!-- css -->
-        <link rel="stylesheet" href="css/style.css" />
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css" />
 
-        <!-- js -->
-        <script src="js/main.js" defer></script>
-    </head>
-    <body>
-        <h1>コーディングテンプレート</h1>
-    </body>
+    <!-- js -->
+    <script src="js/vendor/gsap.min.js" defer></script>
+    <script src="js/vendor/ScrollTrigger.min.js" defer></script>
+    <script type="module" src="js/main.js"></script>
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&family=Shippori+Mincho:wght@400;500&display=swap" rel="stylesheet" />
+
+    <meta name="robots" content="noindex,nofollow" />
+  </head>
+  <body>
+    <div class="l-page-wrap">
+      <header class="l-header l-header--top js-header">
+        <h1 class="l-header-logo">
+          <a href="index.html" class="l-header-logo-link">
+            <img src="img/common/logo.svg" width="132" height="108" alt="Ankh of Eternity" />
+          </a>
+        </h1>
+
+        <button type="button" class="l-header-menu-open-button js-header-menu-open-button" aria-haspopup="dialog">
+          <picture>
+            <source media="(max-width: 767px)" srcset="img/common/icon-hamburger-sp.svg" />
+            <img src="img/common/icon-hamburger.svg" width="30" height="12" alt="メニューを開く" decoding="async" />
+          </picture>
+        </button>
+
+        <dialog class="l-header-menu js-header-menu" aria-label="メニュー">
+          <div class="l-container">
+            <div class="l-header-menu-top">
+              <div class="l-header-logo">
+                <a href="index.html" class="l-header-logo-link">
+                  <img src="img/common/logo.svg" width="132" height="108" alt="Ankh of Eternity" />
+                </a>
+              </div>
+
+              <button type="button" class="l-header-menu-close-button js-header-menu-close-button">
+                <picture>
+                  <source media="(max-width: 767px)" srcset="img/common/icon-cross-sp.svg" />
+                  <img src="img/common/icon-cross.svg" width="30" height="12" alt="メニューを閉じる" decoding="async" />
+                </picture>
+              </button>
+            </div>
+
+            <nav class="l-header-menu-nav" aria-label="メインメニュー">
+              <ul class="l-header-menu-list">
+                <li class="l-header-menu-item">
+                  <a href="#" class="l-header-menu-link">
+                    <span class="l-header-menu-text-en">Information</span>
+                    <span class="l-header-menu-text-ja">新着情報</span>
+                  </a>
+                </li>
+                <li class="l-header-menu-item">
+                  <a href="#" class="l-header-menu-link">
+                    <span class="l-header-menu-text-en">Brands</span>
+                    <span class="l-header-menu-text-ja">取り扱いブランド</span>
+                  </a>
+                </li>
+                <li class="l-header-menu-item">
+                  <a href="#" class="l-header-menu-link">
+                    <span class="l-header-menu-text-en">Travel</span>
+                    <span class="l-header-menu-text-ja">旅行案内</span>
+                  </a>
+                </li>
+                <li class="l-header-menu-item">
+                  <a href="#" class="l-header-menu-link">
+                    <span class="l-header-menu-text-en">Recruit</span>
+                    <span class="l-header-menu-text-ja">採用情報</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </dialog>
+      </header>
+
+      <main class="l-page-main">
+        <div class="top-kv js-top-kv-scroll">
+          <div class="top-kv-text">
+            <p class="top-kv-text-en js-top-kv-text-en">Ankh <span class="top-kv-text-en-unit">of</span> <span class="top-kv-text-en-unit02">Eternity</span></p>
+            <p class="top-kv-text-ja js-top-kv-text-ja">絢爛なる織りの極致、ペルシャ絨毯</p>
+          </div>
+
+          <button type="button" class="top-kv-scroll">
+            <span class="top-kv-scroll-text">Scroll</span>
+          </button>
+        </div>
+
+        <section class="top-news js-top-news">
+          <div class="l-container">
+            <div class="top-news-inner js-top-news-inner">
+              <div class="top-news-title-wrap">
+                <div class="c-title js-top-news-title">
+                  <span class="c-title-en">Information</span>
+                  <h2 class="c-title-jp">新着情報</h2>
+                </div>
+                <div class="top-news-button js-top-news-button">
+                  <a href="#" class="top-news-button-link">View more</a>
+                </div>
+              </div>
+              <div class="top-news-list js-top-news-list">
+                <article class="c-post-news">
+                  <a href="#" class="c-post-news-link">
+                    <div class="c-post-news-info">
+                      <time class="c-post-news-date" datetime="2024-02-06">2024.02.06</time>
+                      <h3 class="c-post-news-title">新商品入荷のお知らせ</h3>
+                    </div>
+                  </a>
+                </article>
+                <article class="c-post-news">
+                  <a href="#" class="c-post-news-link">
+                    <div class="c-post-news-info">
+                      <time class="c-post-news-date" datetime="2024-02-06">2024.02.06</time>
+                      <h3 class="c-post-news-title">Webサイトをリニューアルしました</h3>
+                    </div>
+                  </a>
+                </article>
+                <article class="c-post-news">
+                  <a href="#" class="c-post-news-link">
+                    <div class="c-post-news-info">
+                      <time class="c-post-news-date" datetime="2024-02-06">2024.02.06</time>
+                      <h3 class="c-post-news-title">ペルシャ絨毯の専門家による講演会開催</h3>
+                    </div>
+                  </a>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="top-brands js-top-brands-trigger">
+          <div class="l-container">
+            <div class="top-brands-inner">
+              <div class="top-brands-title js-top-brands-title">
+                <span class="top-brands-title-en">Brands</span>
+                <h2 class="top-brands-title-ja">取り扱いブランド</h2>
+              </div>
+
+              <div class="top-brands-list">
+                <article class="top-brands-item js-top-brands-item">
+                  <a href="#" class="top-brands-item-link">
+                    <div class="top-brands-item-img" data-number="01">
+                      <picture>
+                        <source media="(max-width: 767px)" srcset="img/top/top-brands-sp.jpg" />
+                        <img src="img/top/top-brands.jpg" width="500" height="333" alt="落ち着いた照明の空間に展示された、グレーとイエローのモダンな幾何学模様の絨毯" decoding="async" />
+                      </picture>
+                    </div>
+                    <div class="top-brands-item-content">
+                      <div class="top-brands-item-text">
+                        <h3 class="top-brands-item-title-en">Caravan of Dreams</h3>
+                        <p class="top-brands-item-title-ja">踏みしめれば、夢の世界へ旅立つ</p>
+                      </div>
+                      <div class="top-brands-item-button">
+                        <picture>
+                          <source media="(max-width: 767px)" srcset="img/common/button-sp.svg" />
+                          <img src="img/common/button.svg" width="72" height="72" alt="詳細を見る" decoding="async" />
+                        </picture>
+                      </div>
+                    </div>
+                  </a>
+                </article>
+
+                <article class="top-brands-item js-top-brands-item">
+                  <a href="#" class="top-brands-item-link">
+                    <div class="top-brands-item-img" data-number="02">
+                      <picture>
+                        <source media="(max-width: 767px)" srcset="img/top/top-brands02-sp.jpg" />
+                        <img src="img/top/top-brands02.jpg" width="500" height="333" alt="色鮮やかな赤や青の文様が施された、ロール状に積み上げられた手織りのペルシャ絨毯" decoding="async" />
+                      </picture>
+                    </div>
+                    <div class="top-brands-item-content">
+                      <div class="top-brands-item-text">
+                        <h3 class="top-brands-item-title-en">Silk Road Treasures</h3>
+                        <p class="top-brands-item-title-ja">歴史と文化を織り込んだ、至宝の絨毯</p>
+                      </div>
+                      <div class="top-brands-item-button">
+                        <picture>
+                          <source media="(max-width: 767px)" srcset="img/common/button-sp.svg" />
+                          <img src="img/common/button.svg" width="72" height="72" alt="詳細を見る" decoding="async" />
+                        </picture>
+                      </div>
+                    </div>
+                  </a>
+                </article>
+
+                <article class="top-brands-item js-top-brands-item">
+                  <a href="#" class="top-brands-item-link">
+                    <div class="top-brands-item-img" data-number="03">
+                      <picture>
+                        <source media="(max-width: 767px)" srcset="img/top/top-brands03-sp.jpg" />
+                        <img src="img/top/top-brands03.jpg" width="500" height="333" alt="赤地に鮮やかな黄色と青の植物文様が描かれた、シルクのような光沢のある絨毯のアップ" decoding="async" />
+                      </picture>
+                    </div>
+                    <div class="top-brands-item-content">
+                      <div class="top-brands-item-text">
+                        <h3 class="top-brands-item-title-en">Persian Palace Rugs</h3>
+                        <p class="top-brands-item-title-ja">王侯貴族も愛した、格式と伝統の絨毯</p>
+                      </div>
+                      <div class="top-brands-item-button">
+                        <picture>
+                          <source media="(max-width: 767px)" srcset="img/common/button-sp.svg" />
+                          <img src="img/common/button.svg" width="72" height="72" alt="詳細を見る" decoding="async" />
+                        </picture>
+                      </div>
+                    </div>
+                  </a>
+                </article>
+
+                <article class="top-brands-item js-top-brands-item">
+                  <a href="#" class="top-brands-item-link">
+                    <div class="top-brands-item-img" data-number="04">
+                      <picture>
+                        <source media="(max-width: 767px)" srcset="img/top/top-brands04-sp.jpg" />
+                        <img src="img/top/top-brands04.jpg" width="500" height="333" alt="黒地に金色の細密な波紋様と蝶の刺繍が施された、伝統的な和風デザインの絨毯" decoding="async" />
+                      </picture>
+                    </div>
+                    <div class="top-brands-item-content">
+                      <div class="top-brands-item-text">
+                        <h3 class="top-brands-item-title-en">The Woven Oasis</h3>
+                        <p class="top-brands-item-title-ja">王侯貴族も愛した、格式と伝統の絨毯</p>
+                      </div>
+                      <div class="top-brands-item-button">
+                        <picture>
+                          <source media="(max-width: 767px)" srcset="img/common/button-sp.svg" />
+                          <img src="img/common/button.svg" width="72" height="72" alt="詳細を見る" decoding="async" />
+                        </picture>
+                      </div>
+                    </div>
+                  </a>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="l-container">
+          <section class="top-concept js-top-concept">
+            <div class="top-concept-inner">
+              <div class="top-concept-img js-top-concept-img">
+                <picture>
+                  <source media="(max-width: 1079px)" srcset="img/top/top-concept-image-sp.jpg" />
+                  <img src="img/top/top-concept-image.jpg" width="660" height="800" alt="ギリシャの神殿の風景" decoding="async" />
+                </picture>
+                <div class="top-concept-img-text">
+                  <p>By combining these two symbols, the Ankh represents the hope of eternal life after death. It was believed that the Ankh could open the gates to the afterlife and protect the deceased on their journey to the next world.</p>
+                  <p>The Ankh is a well-known symbol representing life, regeneration, and eternity. Its shape combines the Tau cross, a symbol of life, with the circle, a symbol of eternity. In ancient Egypt, gods were often depicted holding the Ankh, and it was believed to ensure eternal life in the afterlife.</p>
+                </div>
+              </div>
+
+              <div class="top-concept-content">
+                <div class="top-concept-content-inner">
+                  <h2 class="top-concept-title js-top-concept-title">
+                    <span class="u-visually-hidden">コンセプト</span>
+                    Ankh <span class="top-concept-title-unit">of</span> Eternity
+                  </h2>
+                  <div class="top-concept-text-group">
+                    <p class="top-concept-text js-top-concept-text">アンクは、生命、再生、永遠の象徴として知られています。<span class="top-concept-text-unit">その形は、生命の象徴であるタウ十字架と、</span>永遠を象徴する円を組み合わせたものです。</p>
+                    <p class="top-concept-text02 js-top-concept-text02">古代エジプトでは、<span class="top-concept-text02-unit">神々がアンクを手に持っている姿が描かれることが多く、</span>死後の世界でも永遠に生きられると考えられていました。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="top-others js-top-others">
+          <div class="l-container">
+            <div class="top-others-inner">
+              <section>
+                <a href="#" class="top-others-card js-top-others-card">
+                  <div class="top-others-image">
+                    <picture>
+                      <source media="(max-width: 767px)" srcset="img/top/top-travel-sp.jpg" />
+                      <img src="img/top/top-travel.jpg" width="576" height="336" alt="旅行案内：青空を背景に力強く飛び立つ飛行機の機体" decoding="async" />
+                    </picture>
+                  </div>
+                  <div class="top-others-content">
+                    <div class="c-title">
+                      <span class="c-title-en">Travel</span>
+                      <h2 class="c-title-jp">旅行案内</h2>
+                    </div>
+                    <p class="top-others-text">旅行案内についての詳細はこちらから</p>
+                    <div class="top-others-button">
+                      <picture>
+                        <source media="(max-width: 767px)" srcset="img/common/button-white-sp.svg" />
+                        <img src="img/common/button-white.svg" width="64" height="64" alt="詳細を見る" decoding="async" />
+                      </picture>
+                    </div>
+                  </div>
+                </a>
+              </section>
+
+              <section>
+                <a href="#" class="top-others-card js-top-others-card">
+                  <div class="top-others-image">
+                    <picture>
+                      <source media="(max-width: 1079px)" srcset="img/top/top-recruit-sp.jpg" />
+                      <img src="img/top/top-recruit.jpg" width="576" height="336" alt="採用情報：PCを操作しながら応募者と話す面接官の様子" decoding="async" />
+                    </picture>
+                  </div>
+                  <div class="top-others-content">
+                    <div class="c-title">
+                      <span class="c-title-en">Recruit</span>
+                      <h2 class="c-title-jp">採用情報</h2>
+                    </div>
+                    <p class="top-others-text">採用情報についての詳細はこちらから</p>
+                    <div class="top-others-button">
+                      <picture>
+                        <source media="(max-width: 1079px)" srcset="img/common/button-white-sp.svg" />
+                        <img src="img/common/button-white.svg" width="64" height="64" alt="詳細を見る" decoding="async" />
+                      </picture>
+                    </div>
+                  </div>
+                </a>
+              </section>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="l-footer">
+        <div class="l-footer-inner">
+          <div class="l-container">
+            <div class="l-footer-top">
+              <a href="#" class="l-footer-logo">
+                <img src="img/common/logo.svg" width="132" height="108" alt="Ankh of Eternity" />
+              </a>
+              <div class="l-footer-info">
+                <div class="l-footer-info-text">
+                  <p class="l-footer-company-name">Ankh of Eternity</p>
+                  <p class="l-footer-address">〒123-4567<br />東京都 銀座区丸の内5-8-24</p>
+                  <p class="l-footer-contact">TEL.01-2345-6789 FAX.01-2345-6789</p>
+                </div>
+                <div class="l-footer-icons">
+                  <a href="#" class="l-footer-icon-link"><img src="img/common/icon-instagram.svg" width="31" height="31" alt="Instagram" decoding="async" /></a>
+                  <a href="#" class="l-footer-icon-link"><img src="img/common/icon-youtube.svg" width="38" height="27" alt="YouTube" decoding="async" /></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="l-footer-main">
+              <section class="l-footer-sitemap">
+                <div class="c-title">
+                  <span class="c-title-en">Site map</span>
+                  <h2 class="c-title-jp">サイトマップ</h2>
+                </div>
+                <div class="l-footer-nav">
+                  <ul class="l-footer-nav-list">
+                    <li class="l-footer-nav-item"><a href="#" class="l-footer-nav-link">ホーム</a></li>
+                    <li class="l-footer-nav-item"><a href="#" class="l-footer-nav-link">取扱いブランド</a></li>
+                    <li class="l-footer-nav-item"><a href="#" class="l-footer-nav-link">私たちについて</a></li>
+                    <li class="l-footer-nav-item"><a href="#" class="l-footer-nav-link">会社概要</a></li>
+                    <li class="l-footer-nav-item"><a href="#" class="l-footer-nav-link">お知らせ</a></li>
+                    <li class="l-footer-nav-item"><a href="#" class="l-footer-nav-link">アクセス</a></li>
+                  </ul>
+                  <ul class="l-footer-nav-list">
+                    <li class="l-footer-nav-item"><a href="#" class="l-footer-nav-link">サイズで見る</a></li>
+                    <li class="l-footer-nav-item"><a href="#" class="l-footer-nav-link">産地で見る</a></li>
+                    <li class="l-footer-nav-item"><a href="#" class="l-footer-nav-link">素材で見る</a></li>
+                    <li class="l-footer-nav-item"><a href="#" class="l-footer-nav-link">ペルシャ絨毯</a></li>
+                    <li class="l-footer-nav-item"><a href="#" class="l-footer-nav-link">その他の工芸品</a></li>
+                    <li class="l-footer-nav-item"><a href="#" class="l-footer-nav-link">ギャラリー</a></li>
+                  </ul>
+                  <ul class="l-footer-nav-list">
+                    <li class="l-footer-nav-item"><a href="#" class="l-footer-nav-link">お問い合わせ</a></li>
+                    <li class="l-footer-nav-item"><a href="#" class="l-footer-nav-link">サイトマップ</a></li>
+                    <li class="l-footer-nav-item"><a href="#" class="l-footer-nav-link">プライバシーポリシー</a></li>
+                  </ul>
+                </div>
+              </section>
+
+              <section class="l-footer-access">
+                <div class="c-title">
+                  <span class="c-title-en">Access</span>
+                  <h2 class="c-title-jp">アクセス</h2>
+                </div>
+                <div class="l-footer-access-map">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d831443.6192918719!2d139.1104279724294!3d35.508564715558826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x605d1b87f02e57e7%3A0x2e01618b22571b89!2z5p2x5Lqs6YO9!5e0!3m2!1sja!2sjp!4v1769763647161!5m2!1sja!2sjp" title="Googleマップ" width="413" height="200" style="border: 0" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+        <div class="l-footer-copyright">
+          <small>Copyright&copy; 2024 All Rights Reserved.</small>
+        </div>
+      </footer>
+    </div>
+  </body>
 </html>

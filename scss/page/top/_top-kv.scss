@@ -4,3 +4,127 @@
 page > top > top-kv
 ------------------------------
 */
+
+.top-kv {
+  background-image: url(../img/top/top-kv-sp.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 800px;
+  display: flex;
+  align-items: center;
+
+  @include g.mq() {
+    background-image: url(../img/top/top-kv.jpg);
+    position: relative;
+    justify-content: center;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 120px;
+      height: 100%;
+      background-color: var(--for-components-bg-black);
+      opacity: 0.4;
+    }
+  }
+}
+
+.top-kv-text {
+  color: var(--text-white);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0 20px;
+
+  @include g.mq() {
+    align-items: center;
+  }
+}
+
+.top-kv-text-en {
+  font-family: var(--font-family-en);
+  font-weight: 400;
+  font-size: 80px;
+  line-height: 1.1;
+  letter-spacing: 0.05em;
+
+  @include g.mq() {
+    font-size: 60px;
+  }
+
+  @include g.mq(lg) {
+    font-size: 96px;
+  }
+}
+
+.top-kv-text-en-unit {
+  display: block;
+
+  @include g.mq() {
+    display: inline-block;
+  }
+}
+
+.top-kv-text-ja {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.4;
+  letter-spacing: 0.1em;
+
+  @include g.mq() {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+}
+
+.top-kv-scroll {
+  display: none;
+
+  @include g.mq() {
+    position: absolute;
+    right: 35px;
+    bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    &::after {
+      content: "";
+      display: block;
+      background: var(--text-primary-bg-dark);
+      width: 1px;
+      height: 50px;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        &::after {
+          animation: line-bounce 0.5s ease infinite alternate;
+        }
+      }
+    }
+  }
+}
+
+.top-kv-scroll-text {
+  @include g.mq() {
+    color: var(--text-primary-bg-dark);
+    font-family: var(--font-family-en);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+  }
+}
+
+@keyframes line-bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}

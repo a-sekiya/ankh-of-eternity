@@ -4,12 +4,19 @@
 layout > container
 ------------------------------
 */
-.l-container-s {
-    width: min(90%, var(--width-content-s));
-    margin-inline: auto;
-}
 
 .l-container {
-    width: min(90%, var(--width-content));
-    margin-inline: auto;
+  max-width: var(--width-content);
+  margin-inline: auto;
+}
+
+.l-page-wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--bg-base);
+}
+
+.l-page-main {
+  flex: 1;
 }

@@ -1,0 +1,99 @@
+@use "../../global" as g;
+
+/*!
+page > top > top-news
+------------------------------
+*/
+.top-news {
+  background-color: var(--bg-darkblue);
+  padding: 48px 20px;
+  margin-top: -55px;
+  width: 94.7%;
+  margin-right: auto;
+  position: relative;
+  z-index: var(--z-index-default);
+
+  @include g.mq() {
+    width: 86.7%;
+    padding: 48px 60px;
+  }
+
+  @include g.mq(xl) {
+    width: 91.7%;
+    padding: 80px 120px;
+  }
+}
+
+.top-news-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+
+  @include g.mq(xl) {
+    display: grid;
+    grid-template-columns: 318px 1fr;
+    gap: 14px;
+  }
+}
+
+.top-news-title-wrap {
+  display: contents;
+
+  @include g.mq(xl) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 50px;
+  }
+}
+
+.top-news-button {
+  order: 3;
+  align-self: flex-end;
+
+  @include g.mq(xl) {
+    align-self: auto;
+  }
+}
+
+.top-news-button-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  color: var(--text-primary-bg-dark);
+  font-family: var(--font-family-en);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.7;
+  letter-spacing: 0.05em;
+  transition: 0.3s ease;
+
+  &::after {
+    content: "";
+    display: block;
+    mask-image: url("../img/common/button.svg");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: var(--text-primary-bg-dark);
+    width: 64px;
+    height: 64px;
+    transition: 0.3s ease;
+  }
+
+  @include g.mq() {
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--text-white);
+        &::after {
+          transform: translateX(4px);
+          background-color: var(--text-white);
+        }
+      }
+    }
+  }
+}
+
+.top-news-list {
+  border-top: 1px solid color-mix(in srgb, var(--text-white), transparent 90%);
+}
