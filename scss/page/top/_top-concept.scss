@@ -9,7 +9,7 @@ page > top > concept
     width: 86.7%;
   }
 
-  @include g.mq(lg) {
+  @include g.mq(xl) {
     width: 91.7%;
   }
 }
@@ -44,7 +44,7 @@ page > top > concept
   bottom: 0;
   left: 0;
   padding: 0 20px 40px 20px;
-  color: var(--website-3-text-white);
+  color: var(--text-white);
   font-family: var(--font-family-en);
   font-weight: 400;
   font-size: 12px;
@@ -69,9 +69,9 @@ page > top > concept
 }
 
 .top-concept-content {
-  background-color: var(--website-3-bg-red);
+  background-color: var(--bg-red);
   position: relative;
-  color: var(--website-3-text-white);
+  color: var(--text-white);
 }
 
 .top-concept-content-inner {
@@ -95,7 +95,7 @@ page > top > concept
 
 .top-concept-title {
   display: block;
-  color: var(--website-3-text-primary-bg-dark);
+  color: var(--text-primary-bg-dark);
   font-family: var(--font-family-en);
   font-weight: 400;
   font-size: 64px;
@@ -103,7 +103,7 @@ page > top > concept
   letter-spacing: 0.05em;
 
   @include g.mq(lg) {
-    font-size: 89px;
+    font-size: 84px;
   }
 
   @include g.mq(xxl) {

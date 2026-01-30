@@ -8,14 +8,15 @@ page > top > top-brands
   position: relative;
   overflow: hidden;
   padding-block: 104px 120px;
+  z-index: 1;
 
   @include g.mq() {
     padding-block: 176px 253px;
   }
 
   &::before {
-    content: "Ankh of Eternity";
-    color: var(--website-3-text-primary);
+    content: "Ankh of Eternity Ankh of Eternity Ankh of Eternity Ankh of Eternity Ankh of Eternity Ankh of Eternity";
+    color: var(--text-primary);
     opacity: 0.05;
     font-family: var(--font-family-en);
     font-size: 154px;
@@ -26,33 +27,23 @@ page > top > top-brands
     position: absolute;
     top: 0;
     left: 50%;
-    translate: -50% 0;
+    z-index: -1;
+    pointer-events: none;
+    display: inline-block;
+    animation: marquee-brands 40s linear infinite;
 
     @include g.mq() {
       font-size: 240px;
     }
   }
+}
 
-  &::after {
-    content: "";
-    background-image: url("../img/top/top-brands-bg-sp.png");
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 1841px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-
-    @include g.mq() {
-      background-image: url("../img/top/top-brands-bg.png");
-      height: 1771px;
-      width: 86.7%;
-    }
-
-    @include g.mq(xl) {
-      width: 91.7%;
-    }
+@keyframes marquee-brands {
+  0% {
+    transform: translate(-50%, 0);
+  }
+  100% {
+    transform: translate(-75%, 0);
   }
 }
 
@@ -72,7 +63,7 @@ page > top > top-brands
 }
 
 .top-brands-title-en {
-  color: var(--website-3-text-primary);
+  color: var(--text-primary);
   font-family: var(--font-family-en);
   font-weight: 400;
   font-size: 56px;
@@ -153,7 +144,7 @@ page > top > top-brands
     bottom: 0;
     right: 9px;
     font-family: var(--font-family-en);
-    color: var(--website-3-text-white);
+    color: var(--text-white);
     opacity: 0.5;
     font-weight: 400;
     font-size: 96px;
@@ -182,7 +173,7 @@ page > top > top-brands
 
 .top-brands-item-title-en {
   font-family: var(--font-family-en);
-  color: var(--website-3-text-primary);
+  color: var(--text-primary);
   font-size: 24px;
   letter-spacing: 0.05em;
 

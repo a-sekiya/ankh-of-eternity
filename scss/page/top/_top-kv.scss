@@ -32,7 +32,7 @@ page > top > top-kv
 }
 
 .top-kv-text {
-  color: var(--website-3-text-white);
+  color: var(--text-white);
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -94,7 +94,7 @@ page > top > top-kv
     &::after {
       content: "";
       display: block;
-      background: var(--website-3-text-primary-bg-dark);
+      background: var(--text-primary-bg-dark);
       width: 1px;
       height: 50px;
     }
@@ -111,7 +111,7 @@ page > top > top-kv
 
 .top-kv-scroll-text {
   @include g.mq() {
-    color: var(--website-3-text-primary-bg-dark);
+    color: var(--text-primary-bg-dark);
     font-family: var(--font-family-en);
     font-weight: 400;
     font-size: 16px;

@@ -6,7 +6,7 @@ component > post-news
 */
 
 .c-post-news {
-  border-bottom: 1px solid color-mix(in srgb, var(--website-3-text-white), transparent 90%);
+  border-bottom: 1px solid color-mix(in srgb, var(--text-white), transparent 90%);
 }
 
 .c-post-news-info {
@@ -23,7 +23,7 @@ component > post-news
 }
 
 .c-post-news-link {
-  color: var(--website-3-text-white);
+  color: var(--text-white);
   display: block;
   transition: 0.3s;
   padding-block: 20px 19px;
@@ -35,7 +35,7 @@ component > post-news
 
   @media (any-hover: hover) {
     &:hover {
-      color: var(--website-3-text-primary-bg-dark);
+      color: var(--text-primary-bg-dark);
 
       .c-post-news-title::after {
         transform: translateX(4px);
@@ -65,7 +65,7 @@ component > post-news
     mask-size: contain;
     mask-repeat: no-repeat;
     mask-position: center;
-    background-color: var(--website-3-text-primary-bg-dark);
+    background-color: var(--text-primary-bg-dark);
     width: 18px;
     height: 26px;
     transition: 0.3s ease;

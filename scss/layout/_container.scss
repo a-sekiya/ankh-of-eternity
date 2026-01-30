@@ -6,12 +6,7 @@ layout > container
 */
 
 .l-container {
-  width: min(90%, var(--width-content));
-  margin-inline: auto;
-}
-
-.l-container-1 {
-  width: min(90%, var(--width-content-l));
+  max-width: var(--width-content);
   margin-inline: auto;
 }
 
@@ -19,7 +14,7 @@ layout > container
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: var(--website-3-bg-base);
+  background-color: var(--bg-base);
 }
 
 .l-page-main {

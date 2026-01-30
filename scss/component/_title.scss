@@ -8,7 +8,7 @@ component > title
   display: flex;
   gap: 8px;
   align-items: baseline;
-  color: var(--website-3-text-white);
+  color: var(--text-white);
 
   @include g.mq() {
     gap: 16px;
@@ -31,7 +31,7 @@ component > title
     mask-size: contain;
     mask-repeat: no-repeat;
     mask-position: center;
-    background-color: var(--website-3-text-white);
+    background-color: var(--text-white);
     width: 63px;
     height: 8px;
   }

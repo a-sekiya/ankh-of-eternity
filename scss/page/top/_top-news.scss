@@ -5,7 +5,7 @@ page > top > top-news
 ------------------------------
 */
 .top-news {
-  background-color: var(--website-3-bg-darkblue);
+  background-color: var(--bg-darkblue);
   padding: 48px 20px;
   margin-top: -55px;
   width: 94.7%;
@@ -60,7 +60,7 @@ page > top > top-news
   display: inline-flex;
   align-items: center;
   gap: 24px;
-  color: var(--website-3-text-primary-bg-dark);
+  color: var(--text-primary-bg-dark);
   font-family: var(--font-family-en);
   font-weight: 400;
   font-size: 20px;
@@ -75,7 +75,7 @@ page > top > top-news
     mask-size: contain;
     mask-repeat: no-repeat;
     mask-position: center;
-    background-color: var(--website-3-text-primary-bg-dark);
+    background-color: var(--text-primary-bg-dark);
     width: 64px;
     height: 64px;
     transition: 0.3s ease;
@@ -84,16 +84,16 @@ page > top > top-news
   @include g.mq() {
     @media (any-hover: hover) {
       &:hover {
-        color: var(--website-3-text-white);
+        color: var(--text-white);
         &::after {
           transform: translateX(4px);
-          background-color: var(--website-3-text-white);
+          background-color: var(--text-white);
         }
       }
     }
   }
 }
 
-.top-news-item {
-  border-top: 1px solid color-mix(in srgb, var(--website-3-text-white), transparent 90%);
+.top-news-list {
+  border-top: 1px solid color-mix(in srgb, var(--text-white), transparent 90%);
 }

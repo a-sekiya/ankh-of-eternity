@@ -59,10 +59,25 @@ layout > footer
   position: absolute;
   right: 20px;
   top: 38px;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  transform: translate(10px, -14px);
 
   @include g.mq() {
     right: 45px;
     top: 40px;
+    transform: translate(15px, -10px);
+  }
+
+  img {
+    width: 40px;
+    height: 12px;
+
+    @include g.mq() {
+      width: 32px;
+    }
   }
 }
 
@@ -105,7 +120,7 @@ layout > footer
 }
 
 .l-header-menu-link {
-  color: var(--website-3-text-white);
+  color: var(--text-white);
   display: inline-flex;
   flex-direction: column;
   gap: 4px;
