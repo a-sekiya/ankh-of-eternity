@@ -10,18 +10,18 @@ export const initializeTopKvText = () => {
   const tl = gsap.timeline();
 
   tl.from(en, {
-    y: 30,
+    y: 40,
     autoAlpha: 0,
-    duration: 1.2,
-    ease: "power3.out",
+    duration: 1.8,
+    ease: "power2.out",
   }).from(
     jp,
     {
-      y: 20,
+      y: 25,
       autoAlpha: 0,
-      duration: 1,
-      ease: "power3.out",
+      duration: 1.5,
+      ease: "power2.out",
     },
-    "-=0.8"
+    "-=1.2"
   );
 };
