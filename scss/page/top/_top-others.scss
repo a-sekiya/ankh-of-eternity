@@ -91,10 +91,14 @@ page > top > top-others
 
 .top-others-image {
   transition: transform 0.3s ease;
+  line-height: 0;
 
   img {
+    width: 100%;
+    height: auto;
     aspect-ratio: 340 / 235;
     object-fit: cover;
+    display: block;
 
     @include g.mq(lg) {
       aspect-ratio: 576 / 336;
@@ -106,7 +110,7 @@ page > top > top-others
   position: absolute;
   bottom: 50%;
   left: 50%;
-  translate: -50% 50%;
+  transform: translate(-50%, 50%);
   width: 86%;
   color: var(--text-white);
   display: grid;
@@ -124,6 +128,7 @@ page > top > top-others
 .top-others-text {
   letter-spacing: 0.1em;
   grid-row: 2/3;
+  min-width: 0;
 }
 
 .top-others-button {
