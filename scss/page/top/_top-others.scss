@@ -99,6 +99,7 @@ page > top > top-others
     aspect-ratio: 340 / 235;
     object-fit: cover;
     display: block;
+    transform: translateZ(0);
 
     @include g.mq(lg) {
       aspect-ratio: 576 / 336;
@@ -113,6 +114,9 @@ page > top > top-others
   transform: translate(-50%, 50%);
   width: 86%;
   color: var(--text-white);
+}
+
+.top-others-grid-wrapper {
   display: grid;
   grid-template-columns: repeat(2, auto);
   grid-template-rows: repeat(2, auto);
