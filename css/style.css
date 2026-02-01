@@ -996,6 +996,29 @@ page > top > top-brands
     font-size: 240px;
   }
 }
+.top-brands::after {
+  content: "";
+  background-image: url("../img/top/top-brands-bg-sp.png");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 1841px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+@media screen and (min-width: 768px) {
+  .top-brands::after {
+    background-image: url("../img/top/top-brands-bg.png");
+    height: 1771px;
+    width: 86.7%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .top-brands::after {
+    width: 91.7%;
+  }
+}
 
 @keyframes marquee-brands {
   0% {
