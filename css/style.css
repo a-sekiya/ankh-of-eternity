@@ -1425,6 +1425,7 @@ page > top > top-others
   -o-object-fit: cover;
      object-fit: cover;
   display: block;
+  transform: translateZ(0);
 }
 @media screen and (min-width: 1080px) {
   .top-others-image img {
@@ -1439,6 +1440,9 @@ page > top > top-others
   transform: translate(-50%, 50%);
   width: 86%;
   color: var(--text-white);
+}
+
+.top-others-grid-wrapper {
   display: grid;
   grid-template-columns: repeat(2, auto);
   grid-template-rows: repeat(2, auto);
@@ -1447,7 +1451,7 @@ page > top > top-others
   gap: 24px 34px;
 }
 @media screen and (min-width: 1080px) {
-  .top-others-content {
+  .top-others-grid-wrapper {
     gap: 32px;
   }
 }
