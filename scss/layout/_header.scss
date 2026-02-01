@@ -63,12 +63,12 @@ layout > footer
   height: 48px;
   display: grid;
   place-items: center;
-  transform: translate(10px, -14px);
+  transform: translate(4px, -18px);
 
   @include g.mq() {
     right: 45px;
     top: 40px;
-    transform: translate(15px, -10px);
+    transform: translate(9px, -18px);
   }
 
   img {

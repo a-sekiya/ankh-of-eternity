@@ -8,7 +8,7 @@ export const initializeHamburgerMenu = () => {
   const openButton = document.querySelector(".js-header-menu-open-button");
   const closeButton = document.querySelector(".js-header-menu-close-button");
 
-  if (!menu || !openButton || !closeButton) return;
+  if (!menu || !menuTop || !menuItems || !openButton || !closeButton) return;
 
   // --- メニューを開く処理 ---
   const openMenu = () => {
@@ -28,11 +28,12 @@ export const initializeHamburgerMenu = () => {
 
     // 3. メニュー項目
     menuItems.forEach((item, index) => {
+      // 文字列セレクタ ".js-l-header-menu-text-en" で検索する
       const enText = item.querySelector(".js-l-header-menu-text-en");
-      if (enText === 0) return;
 
       tl.fromTo(item, { y: 15, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.8, ease: "power3.out" }, index === 0 ? "-=0.6" : "-=0.7");
 
+      // enTextが存在する場合のみアニメーションを追加
       if (enText) {
         tl.fromTo(enText, { letterSpacing: "0.3em", filter: "blur(2px)" }, { letterSpacing: "0.05em", filter: "blur(0px)", duration: 1.0, ease: "power2.out" }, "<");
       }

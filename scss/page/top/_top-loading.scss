@@ -1,0 +1,65 @@
+@use "../../global" as g;
+
+/*!
+page > top > top-loading
+------------------------------
+*/
+
+.top-loading {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-index-loading);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.top-loading-inner {
+  position: relative;
+  z-index: var(--z-index-elevated);
+  text-align: center;
+}
+
+.top-loading-logo {
+  opacity: 0;
+  transform: translateY(20px);
+  margin-bottom: 30px;
+}
+
+.top-loading-bar-wrap {
+  width: 160px;
+  height: 2px;
+  background-color: var(--color-white-10);
+  margin-inline: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.top-loading-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--text-white) !important;
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+.top-loading-curtain {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-color: var(--for-components-bg-black);
+  z-index: var(--z-index-default);
+}
+
+.top-loading-curtain.is-left {
+  left: 0;
+}
+.top-loading-curtain.is-right {
+  right: 0;
+}
