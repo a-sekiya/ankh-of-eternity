@@ -243,8 +243,7 @@ utility > utility
   border: 0 !important;
   padding: 0 !important;
   clip: rect(0 0 0 0) !important;
-  -webkit-clip-path: inset(50%) !important;
-          clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
   margin: -1px !important;
 }
 
@@ -1425,9 +1424,10 @@ page > top > top-others
   }
 }
 
-.top-others-card {
+.top-others-item {
   position: relative;
 }
+
 @media (any-hover: hover) {
   .top-others-card:hover .top-others-image {
     transform: scale(1.03);
@@ -1562,4 +1562,4 @@ page > top > top-loading
 
 .top-loading-curtain.is-right {
   right: 0;
-}
+}/*# sourceMappingURL=style.css.map */

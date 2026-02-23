@@ -73,9 +73,11 @@ page > top > top-others
   }
 }
 
-.top-others-card {
+.top-others-item {
   position: relative;
+}
 
+.top-others-card {
   @media (any-hover: hover) {
     &:hover {
       .top-others-image {
