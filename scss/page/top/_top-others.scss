@@ -9,7 +9,7 @@ page > top > top-others
   overflow: hidden;
 
   &::before {
-    content: "Ankh of Eternity Ankh of Eternity Ankh of Eternity Ankh of Eternity Ankh of Eternity Ankh of Eternity";
+    content: "Ankh of Eternity Ankh of Eternity";
     color: var(--text-primary);
     opacity: 0.05;
     font-family: var(--font-family-en);
@@ -20,14 +20,25 @@ page > top > top-others
     white-space: nowrap;
     position: absolute;
     top: 50%;
-    left: 0;
+    left: -110%;
     transform: translateY(-25%);
     display: inline-block;
-    animation: marquee-others 40s linear infinite;
+    opacity: 0;
+    transition:
+      opacity 1.5s ease,
+      transform 1.5s ease;
 
     @include g.mq() {
       font-size: 240px;
+      left: -25%;
       transform: translateY(-60%);
+    }
+  }
+
+  &.is-active::before {
+    opacity: 0.05;
+    @include g.mq() {
+      transform: translateY(-60%) translateX(0);
     }
   }
 }
@@ -38,17 +49,6 @@ page > top > top-others
   }
   100% {
     transform: translateY(-25%) translateX(-50%);
-  }
-}
-
-@include g.mq() {
-  @keyframes marquee-others {
-    0% {
-      transform: translateY(-60%) translateX(0);
-    }
-    100% {
-      transform: translateY(-60%) translateX(-50%);
-    }
   }
 }
 

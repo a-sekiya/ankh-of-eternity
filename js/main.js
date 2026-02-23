@@ -2,7 +2,6 @@ import { initializeHamburgerMenu } from "./component/hamburgermenu.js";
 import { initializeScrollBtn } from "./top/scroll-btn.js";
 import { initializeTopBrands } from "./top/top-brands.js";
 import { initializeTopConcept } from "./top/top-concept.js";
-import { initializeTopKvText } from "./top/top-kv-text.js";
 import { initializeTopLoading } from "./top/top-loading.js";
 import { initializeTopNews } from "./top/top-news.js";
 import { initializeTopOthers } from "./top/top-others.js";
@@ -15,7 +14,6 @@ window.addEventListener("resize", switchViewport);
 // 各機能の初期化
 initializeHamburgerMenu();
 initializeScrollBtn();
-initializeTopKvText();
 initializeTopNews();
 initializeTopBrands();
 initializeTopConcept();

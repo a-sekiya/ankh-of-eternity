@@ -11,17 +11,15 @@ export const initializeTopKvText = () => {
 
   tl.from(en, {
     y: 40,
-    autoAlpha: 0,
     duration: 1.8,
     ease: "power2.out",
   }).from(
     jp,
     {
       y: 25,
-      autoAlpha: 0,
       duration: 1.5,
       ease: "power2.out",
     },
-    "-=1.2"
+    "-=1.2",
   );
 };

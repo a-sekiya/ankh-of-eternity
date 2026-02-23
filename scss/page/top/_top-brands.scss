@@ -15,7 +15,7 @@ page > top > top-brands
   }
 
   &::before {
-    content: "Ankh of Eternity Ankh of Eternity Ankh of Eternity Ankh of Eternity Ankh of Eternity Ankh of Eternity";
+    content: "Ankh of Eternity Ankh of Eternity";
     color: var(--text-primary);
     opacity: 0.05;
     font-family: var(--font-family-en);
@@ -26,15 +26,26 @@ page > top > top-brands
     white-space: nowrap;
     position: absolute;
     top: 0;
-    left: 50%;
+    left: -110%;
     z-index: -1;
     pointer-events: none;
     display: inline-block;
-    animation: marquee-brands 40s linear infinite;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition:
+      opacity 1.5s ease,
+      transform 1.5s ease;
+    transition: opacity 0.8s ease;
 
     @include g.mq() {
       font-size: 240px;
+      left: -39%;
     }
+  }
+
+  &.is-active::before {
+    opacity: 0.05;
+    transform: translateX(0);
   }
 
   &::after {
@@ -57,15 +68,6 @@ page > top > top-brands
     @include g.mq(xl) {
       width: 91.7%;
     }
-  }
-}
-
-@keyframes marquee-brands {
-  0% {
-    transform: translate(-50%, 0);
-  }
-  100% {
-    transform: translate(-75%, 0);
   }
 }
 
