@@ -151,8 +151,7 @@ button {
   font-size: 100%;
   border-radius: 0;
   border: none;
-  -moz-appearance: none;
-       appearance: none;
+  appearance: none;
   -webkit-appearance: none;
   background-color: inherit;
 }
@@ -275,14 +274,10 @@ component > title
 }
 .c-title-en::after {
   content: "";
-  -webkit-mask-image: url("../img/common/title-line.svg");
-          mask-image: url("../img/common/title-line.svg");
-  -webkit-mask-size: contain;
-          mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-          mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-          mask-position: center;
+  mask-image: url("../img/common/title-line.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
   background-color: var(--text-white);
   width: 63px;
   height: 8px;
@@ -361,14 +356,10 @@ component > post-news
 .c-post-news-title::after {
   content: "";
   display: block;
-  -webkit-mask-image: url("../img/common/arrow.svg");
-          mask-image: url("../img/common/arrow.svg");
-  -webkit-mask-size: contain;
-          mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-          mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-          mask-position: center;
+  mask-image: url("../img/common/arrow.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
   background-color: var(--text-primary-bg-dark);
   width: 18px;
   height: 26px;
@@ -733,7 +724,7 @@ page > top > top-kv
   background-image: url(../img/top/top-kv-sp.jpg);
   background-size: cover;
   background-position: center;
-  height: 800px;
+  height: 100vh;
   display: flex;
   align-items: center;
 }
@@ -930,14 +921,10 @@ page > top > top-news
 .top-news-button-link::after {
   content: "";
   display: block;
-  -webkit-mask-image: url("../img/common/button.svg");
-          mask-image: url("../img/common/button.svg");
-  -webkit-mask-size: contain;
-          mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-          mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-          mask-position: center;
+  mask-image: url("../img/common/button.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
   background-color: var(--text-primary-bg-dark);
   width: 64px;
   height: 64px;
@@ -973,7 +960,7 @@ page > top > top-brands
   }
 }
 .top-brands::before {
-  content: "Ankh of Eternity Ankh of Eternity Ankh of Eternity Ankh of Eternity Ankh of Eternity Ankh of Eternity";
+  content: "Ankh of Eternity Ankh of Eternity";
   color: var(--text-primary);
   opacity: 0.05;
   font-family: var(--font-family-en);
@@ -984,16 +971,24 @@ page > top > top-brands
   white-space: nowrap;
   position: absolute;
   top: 0;
-  left: 50%;
+  left: -110%;
   z-index: -1;
   pointer-events: none;
   display: inline-block;
-  animation: marquee-brands 40s linear infinite;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 1.5s ease, transform 1.5s ease;
+  transition: opacity 0.8s ease;
 }
 @media screen and (min-width: 768px) {
   .top-brands::before {
     font-size: 240px;
+    left: -39%;
   }
+}
+.top-brands.is-active::before {
+  opacity: 0.05;
+  transform: translateX(0);
 }
 .top-brands::after {
   content: "";
@@ -1019,14 +1014,6 @@ page > top > top-brands
   }
 }
 
-@keyframes marquee-brands {
-  0% {
-    transform: translate(-50%, 0);
-  }
-  100% {
-    transform: translate(-75%, 0);
-  }
-}
 .top-brands-inner {
   padding-inline: 20px;
   position: relative;
@@ -1217,8 +1204,7 @@ page > top > concept
 }
 .top-concept-img img {
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 @media screen and (min-width: 1080px) {
   .top-concept-img {
@@ -1359,7 +1345,7 @@ page > top > top-others
   overflow: hidden;
 }
 .top-others::before {
-  content: "Ankh of Eternity Ankh of Eternity Ankh of Eternity Ankh of Eternity Ankh of Eternity Ankh of Eternity";
+  content: "Ankh of Eternity Ankh of Eternity";
   color: var(--text-primary);
   opacity: 0.05;
   font-family: var(--font-family-en);
@@ -1370,15 +1356,25 @@ page > top > top-others
   white-space: nowrap;
   position: absolute;
   top: 50%;
-  left: 0;
+  left: -110%;
   transform: translateY(-25%);
   display: inline-block;
-  animation: marquee-others 40s linear infinite;
+  opacity: 0;
+  transition: opacity 1.5s ease, transform 1.5s ease;
 }
 @media screen and (min-width: 768px) {
   .top-others::before {
     font-size: 240px;
+    left: -25%;
     transform: translateY(-60%);
+  }
+}
+.top-others.is-active::before {
+  opacity: 0.05;
+}
+@media screen and (min-width: 768px) {
+  .top-others.is-active::before {
+    transform: translateY(-60%) translateX(0);
   }
 }
 
@@ -1388,16 +1384,6 @@ page > top > top-others
   }
   100% {
     transform: translateY(-25%) translateX(-50%);
-  }
-}
-@media screen and (min-width: 768px) {
-  @keyframes marquee-others {
-    0% {
-      transform: translateY(-60%) translateX(0);
-    }
-    100% {
-      transform: translateY(-60%) translateX(-50%);
-    }
   }
 }
 .top-others-inner {
@@ -1445,8 +1431,7 @@ page > top > top-others
   width: 100%;
   height: auto;
   aspect-ratio: 340/235;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
   transform: translateZ(0);
 }
@@ -1542,7 +1527,7 @@ page > top > top-loading
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--text-white) !important;
+  background-color: var(--text-white);
   transform: scaleX(0);
   transform-origin: left center;
 }

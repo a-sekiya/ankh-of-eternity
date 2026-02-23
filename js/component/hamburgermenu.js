@@ -20,31 +20,41 @@ export const initializeHamburgerMenu = () => {
 
     const tl = gsap.timeline();
 
-    // 1. 背景：0.8秒 → 0.4秒に短縮し、すぐ中身へ
-    tl.fromTo(menu, { autoAlpha: 0, scale: 1.01 }, { autoAlpha: 0.9, scale: 1, duration: 0.4, ease: "power2.out" });
+    // 1. 背景アニメーションをより早く（0.4秒 → 0.28秒など）
+    tl.fromTo(menu, { autoAlpha: 0, scale: 1.01 }, { autoAlpha: 0.9, scale: 1, duration: 0.28, ease: "power2.out" });
 
-    // 2. 上部ロゴ・ボタン
-    tl.fromTo(menuTop, { y: -10, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.8, ease: "expo.out" }, "-=0.3");
+    // 2. 上部ロゴ・ボタンも少し短く（0.8秒 → 0.6秒）
+    tl.fromTo(menuTop, { y: -10, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.6, ease: "expo.out" }, "-=0.18");
 
-    // 3. メニュー項目
+    // 3. メニュー項目のアニメーションも全体的に短縮（0.8秒 → 0.55秒, スタッガーも狭める）
     menuItems.forEach((item, index) => {
       // 文字列セレクタ ".js-l-header-menu-text-en" で検索する
       const enText = item.querySelector(".js-l-header-menu-text-en");
 
-      tl.fromTo(item, { y: 15, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.8, ease: "power3.out" }, index === 0 ? "-=0.6" : "-=0.7");
+      tl.fromTo(
+        item,
+        { y: 15, autoAlpha: 0 },
+        {
+          y: 0,
+          autoAlpha: 1,
+          duration: 0.55,
+          ease: "power3.out",
+        },
+        index === 0 ? "-=0.42" : "-=0.58",
+      );
 
-      // enTextが存在する場合のみアニメーションを追加
+      // enTextが存在する場合のみアニメーションを追加（全体に合わせて短縮）
       if (enText) {
-        tl.fromTo(enText, { letterSpacing: "0.3em", filter: "blur(2px)" }, { letterSpacing: "0.05em", filter: "blur(0px)", duration: 1.0, ease: "power2.out" }, "<");
+        tl.fromTo(enText, { letterSpacing: "0.3em", filter: "blur(2px)" }, { letterSpacing: "0.05em", filter: "blur(0px)", duration: 0.7, ease: "power2.out" }, "<");
       }
     });
   };
 
-  // --- メニューを閉じる処理 ---
+  // --- メニューを閉じる処理 ---（閉じアニメーションも0.4秒→0.28秒に短縮）
   const closeMenu = () => {
     gsap.to(menu, {
       autoAlpha: 0,
-      duration: 0.4,
+      duration: 0.28,
       ease: "power2.inOut",
       onComplete: () => {
         menu.close();
